@@ -1,0 +1,139 @@
+<?php
+ 
+	/*
+	*
+	**/
+
+class utilisateur{
+	private $login; 
+	private $mdp;
+	private $profil
+	
+	function __construct($login, $mdp, $profil){
+		$this->login=$login;
+		$this->mdp=$mdp;
+		$this->profil=$profil;
+	}
+	function setLogin($login){
+		$this->login=$login;
+	
+	}
+	
+	function setMdp($mdp){
+		$this->mdp=$mpd;
+	}
+	function existe($bdd){
+		$verification=$bdd->prepare('select count(*) from compte where login=:n1 and mdp=:n2 and profil=:n3');
+		$verification->execute(array(
+			':n1'=>$this->login,
+			':n2'=>$this->mdp,
+			':n3'=>$this->profil
+		));
+		$nbr=$verification->fetch();
+		if($nbr[0]==1)
+			return true;
+		else
+			return false;
+	}
+	
+	function CreerUtilisateur($bdd, $nom, $prenom){
+		$req=$bdd->prepare("INSERT INTO compte(nom, prenom, profil, login, mdp, date_creation) VALUES (:n1, :n2, :n3, :n4, :n5, :n6)");
+		$req->execute(array(
+			':n1'=>$nom,
+			 ':n2'=>$prenom, 
+			 ':n3'=>$this->profil, 
+			 ':n4'=>$this->login, 
+			 ':n5'=>$this->mdp,
+			 ':n6'=>date('Y-m-d')
+		));
+	}
+	
+	function getIdCompte($bdd){
+		$req=$bdd->prepare('select count(*) from compte where login=:n1 and mdp=:n2');
+		$req->execute(array(
+			':n1'=>$this->login,
+			 ':n2'=>$this->mdp
+		));
+		$donnees=$req->fetch();
+		return $donnees[0];
+	}
+	function modiferUtilisateur($bdd,$id,$login,$mdp){
+		$req=$bdd->prepare("UPDATE compte SET login=:n1, mdp=:n2 WHERE id_compte=:n3");
+		$req->execute(array(
+			':n1'=>$login,
+			 ':n2'=>$mdp, 
+			 ':n3'=>$id
+		));
+		$this->setLogin($login);
+		$this->SetMdp($mdp);
+	}
+	
+	function modifierInformationsUtilisateur($bdd, $nom, $prenom){
+		$req=$bdd->prepare("UPDATE compte SET nom=:n1, prenom=:n2, profil=:n3 WHERE id_compte=:n4");
+		$req->execute(array(
+			':n1'=>$nom,
+			 ':n2'=>$prenom, 
+			 ':n3'=>$this->profil, 
+			 ':n4'=>$this->getIdCompte($bdd), 
+		));
+	}
+	
+	function supprimerUtilisateur($bdd){
+		$req=$bdd->prepare("DELETE * FROM compte where id_compte=:n1");
+		$req->execute(array(':n1'=>$this->getIdCompte($bdd)));
+	}
+	
+	static function recupererInformationsUtilisateur($bdd, $id){
+		$req=$bdd->prepare('select * from compte where id_compte=:n1');
+		$req->execute(array(
+			':n1'=>$id
+		));
+		return $req->fetch();
+	}
+
+}
+
+
+class abonne{
+	private $id;
+	
+	function __construct($id){
+		$this->cni=$id;
+	}
+	
+	static function ajouterAbonne($bdd, $cni, $nom, $prenom, $addr, $tel){
+		$req=$bdd->prepare("INSERT INTO abonne(nom, prenom, cni, adresse, telephone, date_abonnement, etat) VALUES (:n1, :n2, :n3, :n4, :n5, :n6, :n7)");
+		$req->execute(array(
+			':n1'=>$nom,
+			 ':n2'=>$prenom, 
+			 ':n3'=>$cni, 
+			 ':n4'=>$addr, 
+			 ':n5'=>$tel,
+			 ':n6'=>date('Y-m-d'),
+			 ':n6'=>0
+		));
+	}
+	
+	function changerEtat($bdd, $etat){
+		$req=$bdd->prepare("UPDATE abonne SET etat=:n1 WHERE id_compte=:n2");
+		$req->execute(array(
+			':n1'=>$etat,
+			 ':n2'=>$this->id
+		));
+	}
+	
+	function modifierAbonne($bdd, $cni, $nom, $prenom, $addr, $tel){
+		$req=$bdd->prepare("UPDATE abonne SET nom=:n1, prenom=:n2, cni=:n3, adresse=:n4, telephone=:n5  WHERE id_compte=:n6");
+		$req->execute(array(
+			':n1'=>$nom,
+			 ':n2'=>$prenom, 
+			 ':n3'=>$cni, 
+			 ':n4'=>$addr, 
+			 ':n5'=>$tel, 
+			 ':n2'=>$this->id 
+		));
+	}
+	
+
+}
+?>

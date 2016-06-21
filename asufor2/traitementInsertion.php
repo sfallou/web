@@ -1,0 +1,50 @@
+<?php
+session_start();
+
+$tof=$_FILES['photo']['name'];
+$extensions=array('.png','.PNG','.jpg','.JPG');
+$typetof=strrchr($tof,".");
+$linktof=$_FILES['photo']['tmp_name'];
+if(in_array($typetof,$extensions)){
+        $nom=$_POST['nom'];
+        $tof="$nom$tof";
+        $prenom=$_POST['prenom'];
+        $datenais=$_POST['datenaiss'];
+        $cni=$_POST['cni'];
+        $adresse=$_POST['adresse'];
+        $sexe=$_POST['sexe'];
+        $datecnideliv=$_POST['datecnideliv'];
+        $datecniexp=$_POST['datecniexp'];
+        $profession=$_POST['profession'];
+        $specialite=$_POST['specialite'];
+        $matrimonial=$_POST['matrimonial'];
+        $dateentre=$_POST['dateentree'];
+        $teint=$_POST['teint'];
+        $taille=$_POST['taille'];
+        //$immatr=$_POST['immatr'];
+        //$dateimmatr=$_POST['dateimmatr'];
+        $transfert=move_uploaded_file($linktof,'photo/'.$tof);
+        if($transfert){
+                //echo"OK<br/>";
+                $_SESSION['cty_nom']=$nom;
+                $_SESSION['cty_prenom']=$prenom;
+                $_SESSION['cty_datenaissance']=$datenais;
+                $_SESSION['cty_cni']=$cni;
+		$_SESSION['cty_photo']=$tof;
+                $_SESSION['cty_adresse']=$adresse;
+                $_SESSION['cty_sexe']=$sexe;
+                $_SESSION['cty_datecnidelivre']=$datecnideliv;
+                $_SESSION['cty_datenaissance']=$datenais;
+                $_SESSION['cty_datecniexpire']=$datecniexp;
+                $_SESSION['cty_profession']=$profession;
+                $_SESSION['cty_specialite']=$specialite;
+                $_SESSION['cty_matrimonial']=$matrimonial;
+                $_SESSION['cty_dateentre']=$dateentre;
+                $_SESSION['cty_teint']=$teint;
+                $_SESSION['cty_taille']=$taille;
+                
+                      }       
+}
+
+header("Location:formContact.php");
+?>  

@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Action"
+msgstr "Ação"
+
+msgid "Add SMS subscribe"
+msgstr "Adicionar assinatura SMS"
+
+msgid "Add message"
+msgstr "Adicionar mensagem"
+
+#, fuzzy
+msgid "Already a member reply"
+msgstr "Você já é um membro"
+
+msgid "Are you sure you want to delete SMS subscribe ?"
+msgstr "Tem certeza que quer remover essa assinatura?"
+
+msgid "Are you sure you want to delete this member ?"
+msgstr "Tem certeza que quer remover esse membro?"
+
+msgid "Are you sure you want to delete this message?"
+msgstr "Tem certeza que quer remover essa mensagem?"
+
+msgid "Created"
+msgstr ""
+
+msgid "Edit SMS subscribe"
+msgstr "Editar assinatura SMS"
+
+#, fuzzy
+msgid "Edit message"
+msgstr "Adicionar mensagem"
+
+#, fuzzy
+msgid "Fail to add SMS subscribe"
+msgstr "Adicionar assinatura SMS"
+
+#, fuzzy
+msgid "Fail to add message"
+msgstr "Adicionar mensagem"
+
+#, fuzzy
+msgid "Fail to edit SMS subscribe"
+msgstr "Editar assinatura SMS"
+
+#, fuzzy
+msgid "Fail to edit message"
+msgstr "Falha ao enviar SMS"
+
+msgid "Fail to send SMS"
+msgstr "Falha ao enviar SMS"
+
+msgid "Keyword"
+msgstr "Palavra-chave"
+
+msgid "Last update"
+msgstr ""
+
+msgid "Manage subscribe"
+msgstr "Administrar assinaturas"
+
+msgid "Member has been deleted"
+msgstr "O membro foi removido"
+
+msgid "Member join datetime"
+msgstr "Data de entrada do membro"
+
+msgid "Member list for keyword"
+msgstr "Lista de membros pra palavra-chave"
+
+#, fuzzy
+msgid "Members"
+msgstr "Ver membros"
+
+msgid "Message"
+msgstr "Mensagem"
+
+#, fuzzy
+msgid "Message ID"
+msgstr "Mensagem"
+
+msgid "Message body"
+msgstr "Corpo da mensagem"
+
+msgid "Message detail"
+msgstr "Detalhes da mensagem"
+
+#, fuzzy
+msgid "Message has been added"
+msgstr "A mensagem foi editada"
+
+msgid "Message has been deleted"
+msgstr "A mensagem foi removida"
+
+msgid "Message has been edited"
+msgstr "A mensagem foi editada"
+
+#, fuzzy
+msgid "Messages"
+msgstr "Mensagem"
+
+msgid "Phone number"
+msgstr "Telefone"
+
+msgid "SMS forward parameter"
+msgstr ""
+
+msgid "SMS messages list for keyword"
+msgstr "Lista de mensagens SMS pra palavra-chave"
+
+msgid "SMS subscribe already exists, reserved or use by other feature"
+msgstr "A assinatura SMS já existe, está reservada ou em uso por outro recurso"
+
+msgid "SMS subscribe has been added"
+msgstr "A assinatura SMS foi adicionada"
+
+msgid "SMS subscribe has been saved"
+msgstr "A assinatura SMS foi salva"
+
+msgid "SMS subscribe keyword"
+msgstr "Palavra-chave da assinatura SMS"
+
+msgid "SMS subscribe parameter"
+msgstr "Resposta pra assinatura"
+
+msgid "SMS subscribe reply"
+msgstr "Resposta pra assinatura"
+
+msgid "SMS subscribe status has been changed"
+msgstr "O status da assinatura SMS foi alterado"
+
+msgid "SMS subscribe with all its messages and members has been deleted"
+msgstr "A assinatura SMS foi removida, junto com suas mensagens e membros"
+
+msgid "SMS unsubscribe parameter"
+msgstr "Resposta pra desinscrição"
+
+msgid "SMS unsubscribe reply"
+msgstr "Resposta pra desinscrição"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Send this message to all members"
+msgstr "Enviar essa mensagem pra todos os membros"
+
+msgid "Sent"
+msgstr ""
+
+msgid "Status"
+msgstr "Estado"
+
+#, fuzzy
+msgid "Unknown format reply"
+msgstr "Formato de SMS desconhecido"
+
+msgid "User"
+msgstr "Usuário"
+
+msgid "View members"
+msgstr "Ver membros"
+
+msgid "View messages"
+msgstr "Ver mensagens"
+
+#, fuzzy
+msgid "You have no member"
+msgstr "Você não é um membro"
+
+msgid "You must fill all fields"
+msgstr "Preencha todos os campos"
+
+msgid "Your SMS has been delivered to queue"
+msgstr "Seu SMS foi emitido pra fila"
+
+#, fuzzy
+msgid "disabled"
+msgstr "Desabilitado"
+
+#, fuzzy
+msgid "enabled"
+msgstr "Habilitado"
+
+msgid "keyword"
+msgstr "palavra-chave"

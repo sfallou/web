@@ -1,0 +1,126 @@
+body{
+	font-family: Verdana, sans-serif;
+	font-size: 0.9em;
+	color: #333;
+}
+
+h1{
+	color: #cd0808;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.6em;
+}
+
+a{
+	color: #db5a27;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #8c330f;
+}
+
+#opacity{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	z-index: 2;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity: 0.8;
+	display: none;
+}
+
+#encodeProgress{
+	position: absolute;
+	z-index: 3;
+	left: 35%;
+	top: 30%;
+	width: 400px;
+	height: 70px;
+	border: #CCC 1px solid;
+	padding: 20px;
+	background-color: #FFF;
+	display: none;
+}
+
+#progressbar .ui-progressbar-value {
+    background-color: #ccc;
+}
+
+.ui-progressbar {
+position: relative;
+}
+  
+#progress-number{
+	position: absolute;
+	left: 50%;
+	top: 5px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
+	font-size: 0.8em;
+}
+
+#uploadBox{
+	z-index: 1;
+	position: absolute;
+	left: 30%;
+	top: 10%;
+	width: 600px;
+	max-height: 450px;
+	overflow: hidden;
+	border: #CCC 1px solid;
+	padding: 20px;
+	background-color: #FFF;
+	-moz-box-shadow: 3px 3px 2px #888;
+	-webkit-box-shadow: 3px 3px 2px #888;
+	box-shadow: 3px 3px 2px #888;
+}
+
+#conversionOptions{
+	display: none;
+}
+
+#linkBox{
+	display: none;
+}
+
+#errorBox{
+	display: none;
+}
+
+#linkbox textarea{
+	width: 250px;
+	height: 100px;
+}
+
+#infoBox{
+	text-align: justify;
+	position: absolute;
+	bottom: 16px;
+	left: 10%;
+	width: 80%;
+	height: 120px;
+	border: #CCC 1px solid;
+	border-bottom: 0;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	overflow: auto;
+}
+
+#creditsBox{
+	z-index: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 10px;
+	background-color: #EEE;
+	border-top: #CCC 1px solid;
+}

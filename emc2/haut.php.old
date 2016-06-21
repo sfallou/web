@@ -1,0 +1,51 @@
+
+<script language="JavaScript1.2">
+//largeur du curseur (en pixels)
+var sliderwidth=330
+//hauteur du curseur (Netscape)
+var sliderheight=145
+//vitesse de defilement
+var slidespeed=4
+
+//les images
+var leftrightslide=new Array()
+var finalslide=''
+leftrightslide[0]='<a href="#"><img src="images/logo.png" border=1 width=154px heigth=200px ></a>'
+leftrightslide[1]='<a href="#"><img src="images/tn_img1.png" border=1 width=154px heigth=200px ></a>'
+leftrightslide[2]='<a href="#"><img src="images/tn_img3.jpeg" border=1 width=154px heigth=200px ></a>'
+leftrightslide[3]='<a href="#"><img src="images/tn_img2.png" border=1 width=154px heigth=200px ></a>'
+leftrightslide[4]='<a href="#"><img src="images/tn_img4.jpg" border=1 width=154px heigth=200px ></a>'
+
+
+/*
+dynamicdrive.com
+Ne rien modifier sous cette ligne
+*/ 
+
+var copyspeed=slidespeed
+for (i=0;i<leftrightslide.length;i++)
+finalslide=finalslide+leftrightslide[i]+"&nbsp;&nbsp;"
+
+{document.write('<marquee id="ieslider" scrollAmount=0 style="width:'+sliderwidth+'">'+finalslide+'</marquee>')
+ieslider.onmouseover=new Function("ieslider.scrollAmount=0")
+ieslider.onmouseout=new Function("if (document.readyState=='complete') ieslider.scrollAmount=slidespeed")}
+
+function regenerate(){window.location.reload()}
+function regenerate2(){ieslider.scrollAmount=slidespeed}
+
+function intializeleftrightslide(){document.ns_slider01.document.ns_slider02.document.write('<nobr>'+finalslide+'</nobr>')
+document. ns_slider01.document.ns_slider02.document.close()
+thelength=document.ns_slider01.document.ns_slider02.document.width
+scrollslide()}
+
+function scrollslide(){if (document.ns_slider01.document.ns_slider02.left>=thelength*(-1)){document.ns_slider01.document.ns_slider02.left-=slidespeed
+setTimeout("scrollslide()",100)}
+else{document.ns_slider01.document.ns_slider02.left=sliderwidth
+scrollslide()}}
+window.onload=regenerate2
+</script>
+<ilayer width=&{sliderwidth}; height=&{sliderheight}; name="ns_slider01" visibility=hide>
+<layer name="ns_slider02" onMouseover="slidespeed=0;" onMouseout="slidespeed=copyspeed"></layer>
+</ilayer>
+
+ <a  style="float:right;" href="deconnexion.php"><input type="button" value="Deconnexion" style="border-radius:10px;" /></a>

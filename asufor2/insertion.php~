@@ -1,0 +1,80 @@
+<?php
+session_start();
+?>
+<center>
+    <table width="500px" class="form" ><tr><td align="center" >
+    <form  action="traitementInsertion.php" method="POST" enctype="multipart/form-data">
+    <h2  align=center>Ajouter Citoyen</h2>
+    </br>
+    <div style="">
+    <input type="text"  name="nom" placeholder="Nom" required /></br></br>
+    <input type="text"  name="prenom" placeholder="Prenom" required /></br></br>
+    <font size=4 >Date de naissance</font><br/>
+    <select class="selectpicker" data-style="btn-info" data-width="100px" name="jour" style="width:25%; height:7%;border-radius:4px;" >
+    <option value=0 >Jour</option>';
+    <?php
+       $jour=1;
+       while($jour!=32)//effichage automatique des jours
+       {
+           echo '<option value='.$jour.' >'.$jour.'</option>';
+           $jour+=1;
+       }
+        ?>
+        </select>
+        
+        <select class="selectpicker" data-style="btn-info" data-width="100px" name="mois" style="width:25%; height:7%;border-radius:4px;" >
+        <option value="mois">Mois</option>
+        <option title=Janvier value="01">Janvier</option>
+        <option title=Fevrier value="02">Fevrier</option>
+        <option title=Mars value="03">Mars</option>
+        <option title=Avril value="04">Avril</option>
+        <option title=Mai value="05">Mai</option>
+        <option title=Juin value="06">Juin</option>
+        <option title=Juillet value="07">Juillet</option>
+        <option title=Aout value="08">Aout</option>
+        <option title=Septembre value="09">Septembre</option>
+        <option title=Octobre value="10">Octobre</option>
+        <option title=Novembre value="11">Novembre</option>
+        <option title=Decembre value="12">Decembre</option>
+        </select>
+        
+        
+        <select class="selectpicker" data-style="btn-info" data-width="100px" name="annee" style="width:25%; height:7%;border-radius:4px;" >
+        <option value=0 >Annee</option>';
+        <?php
+        $an=date('Y');
+        while($an!=1950)
+        {
+            echo '<option value='.$an.' >'.$an.'</option>';
+            $an-=1;
+        }
+        ?>
+        </select></br></br>
+        
+        <input type="text"  name="adresse" placeholder="Lieu de naissance" required /></br></br>      
+        <input type="text"  name="cni" placeholder="NCIN"  required/></br></br>
+        Date delivrance CNI:<input type="date"  name="datecnideliv"  required /></br></br>
+        Date expiration CNI:<input type="date"  name="datecniexp"  required /></br></br>
+        Homme:<input type="radio"  name="sexe"  value="masculin" checked/> &nbsp; &nbsp
+        Femme:<input type="radio"  name="sexe"  value="feminin"  /></br></br>
+        <input type="text"  name="profession" placeholder="Profession" required /></br></br>
+        <input type="text"  name="specialite" placeholder="Specialite" /></br></br> 
+        Situation matrimoniale:<br/><br/>
+        Marie:<input type="radio"  name="matrimonial"  value="marie" checked/>&nbsp; &nbsp
+        Celibataire:<input type="radio"  name="matrimonial"  value="Celibataire" /></br></br>
+        Date immatriculation: <input type="date"  name="dateentree" placeholder="Date entree" required /></br></br>
+        Photo:<input name="photo" type="file" required ></br></br>
+        <input type="text"  name="teint" placeholder="teint"/></br></br>
+        <input type="text"  name="taille" placeholder="taille" required /></br></br>
+        
+      <input   type="submit" value="Ajouter"/>
+        </div>
+        </form>
+          </td></tr></table>
+        </center>
+       
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

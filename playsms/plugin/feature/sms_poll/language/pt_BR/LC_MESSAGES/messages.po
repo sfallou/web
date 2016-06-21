@@ -1,0 +1,145 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Action"
+msgstr "Ação"
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Add SMS poll"
+msgstr "Adicionar votação SMS"
+
+msgid "Add choice to this poll"
+msgstr "Adicionar opção pra essa votação"
+
+msgid ""
+"Are you sure you want to delete SMS poll with all its choices and votes ?"
+msgstr ""
+"Tem certeza que quer remover a votação SMS com todas as opções e votos?"
+
+msgid "Are you sure you want to delete choice ?"
+msgstr "Tem certeza que quer remover essa opção?"
+
+msgid "Choice already exists"
+msgstr "A opção já existe"
+
+msgid "Choice has been added"
+msgstr "A opção foi adicionada"
+
+#, fuzzy
+msgid "Choice keyword"
+msgstr "Palavra-chave da opção"
+
+msgid "Choice title"
+msgstr "Título da opção"
+
+msgid "Edit SMS poll"
+msgstr "Editar votação SMS"
+
+msgid "Edit SMS poll choices"
+msgstr "Editar opções da votação SMS"
+
+msgid "Fail to add SMS poll"
+msgstr "Falha ao remover a opçao da votação SMS"
+
+msgid "Fail to delete SMS poll choice"
+msgstr "Falha ao remover a opçao da votação SMS"
+
+msgid "Graph output"
+msgstr ""
+
+msgid "JSON output"
+msgstr ""
+
+msgid "Keyword"
+msgstr "Palavra-chave"
+
+msgid "Manage poll"
+msgstr "Administrar votação"
+
+msgid "PHP serialize output"
+msgstr ""
+
+msgid "Reply message on invalid answer"
+msgstr ""
+
+msgid "Reply message on valid answer"
+msgstr ""
+
+msgid "Reply message when invalid answer"
+msgstr ""
+
+msgid "SMS poll already exists, reserved or use by other feature"
+msgstr "A votação SMS já existe, está reservada ou em uso por outro recurso"
+
+msgid "SMS poll choice and all its voters has been deleted"
+msgstr "A opção da votação SMS foi removida com todos os seus votos"
+
+#, fuzzy
+msgid "SMS poll graph"
+msgstr "Palavra-chave da votação SMS"
+
+msgid "SMS poll has been added"
+msgstr "A votação SMS foi adicionada"
+
+msgid "SMS poll keyword"
+msgstr "Palavra-chave da votação SMS"
+
+msgid "SMS poll status has been changed"
+msgstr "O status da votaçõa SMS foi alterado"
+
+msgid "SMS poll title"
+msgstr "Título da votação SMS"
+
+msgid "SMS poll with all its messages has been deleted"
+msgstr "A votação SMS foi removida com todas as suas mensagens"
+
+msgid "SMS poll with has been saved"
+msgstr "A votação SMS foi salva"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "This poll has 0 votes!"
+msgstr ""
+
+msgid "Title"
+msgstr "Título"
+
+msgid "User"
+msgstr "Usuário"
+
+msgid "View"
+msgstr ""
+
+#, fuzzy
+msgid "View poll"
+msgstr "Administrar votação"
+
+msgid "XML output"
+msgstr ""
+
+msgid "You must fill all fields"
+msgstr "Preencha todos os campos"
+
+#, fuzzy
+msgid "disabled"
+msgstr "Desabilitado"
+
+#, fuzzy
+msgid "enabled"
+msgstr "Habilitado"
+
+msgid "keyword"
+msgstr "palavra-chave"
+
+msgid "title"
+msgstr "título"

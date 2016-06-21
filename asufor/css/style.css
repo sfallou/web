@@ -1,0 +1,388 @@
+.link {
+text-decoration:none;
+color:#FFF;
+text-shadow: 15px #000;
+font-size: 15px;
+cursor: pointer;
+background: #394963;
+border-radius: 10px;
+/*background: linear-gradient(#27292C, #BBDEFF) repeat scroll 0% 0% transparent;*/
+border: 2px solid #000;
+ display: block; 
+  padding: 5px 7px;
+}
+.link:active{
+text-decoration:none;
+color:#FFF;
+text-shadow: 15px #000;
+font-size: 15px;
+cursor: pointer;
+background: #FFF;
+border-radius: 10px;
+background: linear-gradient(#FF00BB, #BBDEFF) repeat scroll 0% 0% transparent;
+border: 2px solid #000;
+}
+.text{
+color: #FFF;
+font-family: Arial,sans-serif;
+font-size: 15px;
+letter-spacing: 2px;
+text-shadow: 0px 1px 0px #000;
+text-indent: 10px;
+font-weight: 100;
+border-radius: 20px;
+background: #394963;
+/*background: linear-gradient(#27292C, #BBDEFF) repeat scroll 0% 0% transparent;*/
+border: 1px solid #000;
+
+}
+
+.profil{
+color: #FFF;
+font-family: Arial,sans-serif;
+font-size: 15px;
+letter-spacing: 1px;
+/*background: linear-gradient(#27292C, #BBDEFF) repeat scroll 0% 0% transparent;*/
+ background: #394963;
+}
+.cadre{
+	width:700px;
+	background-color:white;
+	border: 1px solid #000;
+	border-radius:20px;
+}
+
+.paragraphe {
+	font-size:15px;
+	width:400px;
+	margin-left:80px;
+}
+h5 {
+font-family: 'Ubuntu', 'Lato', sans-serif;
+
+    color:black ;
+    font-weight: 100;
+    font-size: 20px;
+    text-align:center;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+
+}
+.index
+{
+	border: 1px solid #000;
+	margin-right:15px;
+}
+.th { /*cellules de titre - ligne 1*/
+	margin:0;
+	padding: 0;
+	width: 578px;
+	height: 46px;
+	border-bottom: 1px solid #b3c1db;
+	background:#EEE;
+}
+
+.td { /*cellules de données*/
+	text-align:left;
+	border-right: 1px solid #ced9ec;
+	border-bottom: 1px solid #b3c1db;
+	background:#EEE;
+	cursor: pointer;
+}
+
+.td:hover { /*rollover des cellules de données*/
+	background:#CA6500;
+	cursor: pointer;
+}
+
+
+
+.table{
+font-family: Arial,sans-serif;
+font-size: 15px;
+margin: auto;
+border: 3px outset #225a84;
+background:#EEE;
+color:#234963;
+}
+
+
+/*style du menu*/
+ol, ul , li{ list-style: none; }
+
+/* nav menu styles */
+#nav { 
+  display: block; 
+  width: 200px; 
+  margin-left: 0px; 
+  margin-right: 10px; 
+  
+ }
+
+#nav li {}
+
+#nav > li > a { 
+  display: block; 
+  padding: 5px 7px;
+  font-size: 15px;
+  margin:2px;
+  color: #FFF;
+  font-family: Arial,sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #212121;
+  background-color: #343434;
+  background: -webkit-gradient(linear, left top, left bottom, from(#343434), to(#292929));
+  background: -webkit-linear-gradient(top, #343434, #292929);
+  background: -moz-linear-gradient(top, #343434, #292929);
+  background: -ms-linear-gradient(top, #343434, #292929);
+  background: -o-linear-gradient(top, #343434, #292929);
+  background: linear-gradient(top, #343434, #292929);
+  border-radius: 20px;
+/*background: linear-gradient(#27292C, #BBDEFF) repeat scroll 0% 0% transparent;*/
+ background: #394963;
+border: 1px solid #FFF;
+}
+#nav > li > a:hover, #nav > li > a.open { 
+  color: #e9e9e9;
+  border-bottom-color: #384f76;
+  background-color: #6985b5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6985b5), to(#456397));
+  background: -webkit-linear-gradient(top, #6985b5, #456397);
+  background: -moz-linear-gradient(top, #6985b5, #456397);
+  background: -ms-linear-gradient(top, #6985b5, #456397);
+  background: -o-linear-gradient(top, #6985b5, #456397);
+  background: linear-gradient(top, #6985b5, #456397);
+}
+
+#nav > li > a:active, #nav > li > a.open { 
+  color: #e9e9e9;
+  border-bottom-color: #384f76;
+  background-color: #6985b5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6985b5), to(#456397));
+  background: -webkit-linear-gradient(top, #6985b5, #456397);
+  background: -moz-linear-gradient(top, #6985b5, #456397);
+  background: -ms-linear-gradient(top, #6985b5, #456397);
+  background: -o-linear-gradient(top, #6985b5, #456397);
+  background: linear-gradient(#FF00BB, #BBDEFF) repeat scroll 0% 0% transparent;
+ 
+}
+
+#nav li ul { display: none; background: #4a5b78; }
+
+#nav li ul li a { 
+  display: block; 
+  background: none;
+  padding: 10px 0px;
+  padding-left: 30px;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: bold;
+  color: #e3e7f1;
+  text-shadow: 1px 1px 0px #000;
+}
+#nav li ul li a:hover {
+  background: #394963;
+}
+
+
+.tab{
+  background: linear-gradient(top, #6985b5, #456397);
+}
+
+
+@charset "utf-8";
+/* CSS Document */
+
+
+#dbm-table { /*conteneur du tableau*/
+	margin:0;
+	padding: 4px;
+	width: 578px;
+	font: 11px Arial, Helvetica, sans-serif;
+	color:black;
+}
+
+
+#dbm-header { /*header du tableau*/
+	margin:0;
+	padding: 14px 0 0 24px;
+	width: 554px;
+	height: 55px;
+	color:#FFF;
+	font-size:13px;
+	background: linear-gradient(top, #6985b5, #456397);
+	background: linear-gradient(#27292C, #BBDEFF) repeat scroll 0% 0% transparent;
+	/*background: #0c2c65 ;	*/
+}
+
+.header-text { /*titre du tableau*/
+	font: bold 22px Arial, Helvetica, sans-serif;
+	
+}
+
+#tb-top { /*ligne de titre - ligne 1 */
+	margin:0;
+	padding: 0;
+	width: 578px;
+	height: 46px;
+	border-bottom: 1px solid #b3c1db;
+	background:#EEE;	
+}
+
+.tb-top-cell { /*cellules de titre - ligne 1*/
+	float:left;
+	padding: 15px 0 0 0;
+	text-align:center;
+	width:105px;
+	height: 31px;
+	border-right: 1px solid #ced9ec;
+	color:#1f3d71;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+
+.tb-top-cell1 { /*cellules de titre de la colonne 1 - ligne 1*/
+	float:left;
+	padding-left: 24px;
+	padding-top: 15px;
+	text-align:left;
+	width:129px;
+	height: 31px;
+	border-right: 1px solid #ced9ec;
+	color:#1f3d71;
+	font: 13px Arial, Helvetica, sans-serif;	
+}
+
+
+#tb-corps { /*corps du tableau*/
+	margin:0;
+	padding: 0;
+	width: 578px;
+	
+}
+
+
+.tb-left-cell { /*cellules de titre -  colonne 1*/
+	float:left;
+	margin:0;
+	padding: 10px 0 0 24px;
+	width: 129px;
+	text-align: left;
+	height: 25px;
+	border-right: 1px solid #ced9ec;
+	border-bottom: 1px solid #b3c1db;
+	color:#1f3d71;
+	font: 13px Arial, Helvetica, sans-serif;
+	background:#ccc;
+	
+}
+
+
+
+.tb-right-cell { /*cellules de données*/
+	float:left;
+	margin:0;
+	padding: 11px 0 0 0;
+	width: 105px;
+	text-align:center;
+	height: 24px;
+	border-right: 1px solid #ced9ec;
+	border-bottom: 1px solid #b3c1db;
+	background:#999;
+}
+
+.tb-right-cell:hover { /*rollover des cellules de données*/
+	background:#CA6500;
+}
+
+#tb-bottom { /*ligne de resultats - derniere ligne*/
+	clear:both;
+	margin:0;
+	padding: 0;
+	width: 578px;
+	height: 48px;
+	border-bottom:1px solid #b3c1db ;
+	background:#EEE;
+}
+
+
+.bottom-cell { /*cellules de résultats - derniere ligne*/
+	float:left;
+	padding: 15px 0 0 0;
+	text-align:center;
+	width:105px;
+	height: 33px;
+	border-right: 1px solid #ced9ec;
+	color:#070707;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+
+.bottom-cell1 { /*cellules de titre de la colonne 1 - ligne 1*/
+	float:left;
+	padding-left: 24px;
+	padding-top: 15px;
+	text-align:left;
+	width:129px;
+	height: 33px;
+	border-right: 1px solid #ced9ec;
+	color:#1f3d71;
+	font: 13px Arial, Helvetica, sans-serif;	
+}
+
+
+
+#tb-footer { /* footer du tableau*/
+	font-size: 10px;
+	color:#8a8a8a;
+	margin:0;
+	padding: 8px 0 8px 12px;
+	width: 566px;
+	background:#EEE;
+}
+
+.calendar{
+    background-color:#eee;
+    position:absolute;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    border:1px solid #555;
+ 
+}
+.calendar a{
+    text-decoration:none;
+    color:#ffffff;
+    font-weight:bold;
+}
+.calendar span{
+    float:left;
+    display:block;
+    width:25px;
+    cursor:pointer;
+    text-align:center;
+}
+.titleMonth{
+    width:100%;
+    background-color:#555;
+    color:#FFFFFF;
+    text-align:center;
+    border-bottom:1px solid #666;
+    margin:none;
+    padding:none;
+    padding-bottom:2px;
+    margin-top:0px;
+    margin-bottom:0px;
+    font-weight:bold;
+}
+.separator{
+    float:left;
+    display:block;
+    width:25px;
+}
+.currentDay{
+    font-weight:bold;
+}
+
+input[type=radio] {
+width:20px;
+height:20px;
+
+}
+

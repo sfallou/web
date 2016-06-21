@@ -1,0 +1,173 @@
+body {
+font-family: Adobe Hebrew;
+background-position: center;
+background-position: top;
+background-size: 100%;
+text-align: center;
+margin-top: 0px;
+margin-bottom: -150px;
+}
+
+
+img { 
+	 width: 1000px;
+	 margin-top: 0px;
+	 margin-bottom: -100px;
+}
+
+header {
+	font-family: Avenir Next;
+	display:inline-block;
+	text-align: center;
+	padding: 1em 1em;
+	margin-top: -20px;
+	margin-bottom: -50px;
+	font-size: 4em;
+	color:rgb(209, 121, 58);
+	background-position:top;
+}
+
+footer {
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+	color:rgb(209, 121, 58);	
+}
+
+header a{
+	text-decoration: none;
+	color: rgb(209, 121, 58);
+}
+
+footer a {
+	text-decoration: underline;
+	color: rgb(209, 121, 58);
+}
+
+h3 {
+	color: rgb(46, 63, 132);
+	font-size: 20px;
+	text-align: center;
+}
+
+h2 {
+	color: rgb(46, 63, 132);
+	font-size: 15px;
+	text-align: center;
+}
+
+
+
+body > nav {
+	display: inline-block;
+	width: 1300px;
+	text-align: center;
+}
+nav div {
+	text-align: center;
+	height: 20px;
+	margin-bottom: 30px;
+}
+nav div > span {
+	height: 400px;
+	display:inline-block;
+	margin-left: 40px;
+
+}
+nav div > span a {
+	text-decoration: none;
+	font-size: 20px;
+	color:rgb(209, 121, 58);
+	display:block;
+	line-height: 40px;
+	vertical-align: middle;
+	text-align:center;
+}
+
+nav a:hover
+{
+text-decoration: underline;
+color: rgb(46, 63, 132);
+}
+
+body > section {
+	background-color: white;
+	margin:auto;
+	width:1280px;
+	padding: 20px;
+	text-align: left;
+	color: rgb(46, 63, 132)
+}
+
+section > video {
+	margin-left: 140px;
+	margin-right: 140px;
+}
+
+form {
+    /* Pour le centrer dans la page */
+    margin: 0 auto;
+    width: 300px;
+    
+}
+
+form div + div {
+    margin-top: 2em;
+}
+label {
+    /* Afin de s'assurer que toutes les étiquettes aient la même dimension et soient alignées correctement */
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+}
+input {
+
+    /* Pour donner la même dimension à tous les champs textuels */
+    width: 100px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Pour harmoniser l'apparence des bordures des champs textuels */
+    border: 1px solid #999;
+}
+.button {
+    /* Pour positionner les boutons de la même manière que les champs textuels */
+    text-align:center; /* même dimension que les étiquettes */
+}
+
+button {
+    /* Cette marge représente approximativement le même espace
+       que celui entre les étiquettes et les champs textuels */
+    margin-left: .5em;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

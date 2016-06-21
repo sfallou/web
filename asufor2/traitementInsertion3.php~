@@ -1,0 +1,52 @@
+<?php
+session_start();
+if(isset($_FILES['photo2'])){
+$tofo=$_FILES['photo2']['name'];
+$extensions=array('.png','.PNG','.jpg','.JPG');
+$typetof=strrchr($tofo,".");
+$linktof=$_FILES['photo2']['tmp_name'];
+if(in_array($typetof,$extensions)){
+        $nom=$_SESSION['cty_nom'];
+        $tofo="conjoint$nom$tofo";
+        $transfert=move_uploaded_file($linktof,'photo/'.$tofo);
+        $_SESSION['cty_photoConjoint']=$tofo;
+
+    }
+}
+$prenomPere=$_POST['prenomPere'];
+$prenomMere=$_POST['prenomMere'];
+$nomMere=$_POST['nomMere'];
+$prenomConjoint=$_POST['prenomConjoint'];
+$nomConjoint=$_POST['nomConjoint'];
+
+$_SESSION['cty_prenomPere']=$prenomPere;
+$_SESSION['cty_prenomMere']=$prenomMere;
+$_SESSION['cty_nomMere']=$nomMere;
+$_SESSION['cty_prenomConjoint']=$prenomConjoint;
+$_SESSION['cty_prenomConjoint']=$nomConjoint;
+
+
+
+echo " -------- Resume: -------- <br/>";
+echo "-------------Informations personnelles--------------:<br/>";
+echo"Nom: ";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Prenom :";echo$_SESSION['cty_prenom'];echo"<br/>";
+echo"Nom Photo :";echo$_SESSION['cty_photo'];echo"<br/>";
+echo"CNI :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Date naissance :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Lieu naissance :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Date delivrance cni :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Date expiration cni :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Sexe :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Profession :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"specialite :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Matrimonial :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Date d'entree au Gondwana :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Teint :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Taille :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Immatriculation :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo"Date Immatriculation :";echo$_SESSION['cty_nom'];echo"<br/>";
+echo "-------------Coordonnees--------------:<br/>";
+
+echo"Telephone:";echo$_SESSION['cty_tel'];echo"<br/>";
+?>

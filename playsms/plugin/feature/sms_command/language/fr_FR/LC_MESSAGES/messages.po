@@ -1,0 +1,101 @@
+# French language for playSMS.
+# Copyright (C) 2012 GPL
+# This file is distributed under the same license as the GPL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.9.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"PO-Revision-Date: 2012-08-12 23:11+0000\n"
+"Last-Translator: ELINGUI Pascal Uriel <elinguiuriel@gmail.com>\n"
+"Language-Team: French <LL@li.org>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Add SMS command"
+msgstr "Ajouter une commande SMS"
+
+msgid "Are you sure you want to delete SMS command ?"
+msgstr "Voulez-vous supprimer la commande SMS ?"
+
+msgid "Edit SMS command"
+msgstr "Éditer commande SMS"
+
+msgid "Exec"
+msgstr "Script exécuté"
+
+msgid "Fail to add SMS command"
+msgstr "Echec ajout commande SMS"
+
+msgid "Fail to delete SMS command"
+msgstr "Echec suppression commande SMS"
+
+msgid "Fail to save SMS command"
+msgstr "Echec sauvegarde commande SMS"
+
+msgid "Keyword"
+msgstr "Mot-clé"
+
+msgid "Make return as reply"
+msgstr "Activer le renvoi du résultat"
+
+msgid "Manage command"
+msgstr "Service commande"
+
+msgid "Pass these parameter to command exec field"
+msgstr "Passez ces paramètres au champs du script"
+
+msgid "SMS command already exists, reserved or use by other feature"
+msgstr "Commane SMS existante, réservée ou utilisée par un autre module"
+
+msgid "SMS command exec"
+msgstr "Script à exécuter"
+
+msgid "SMS command exec path"
+msgstr "Répertoire d'exécution des scripts"
+
+msgid "SMS command has been added"
+msgstr "Commande SMS ajoutée"
+
+msgid "SMS command has been deleted"
+msgstr "Commande SMS supprimée"
+
+msgid "SMS command has been saved"
+msgstr "Commande SMS sauvegardée"
+
+msgid "SMS command keyword"
+msgstr "Mot-clé commande SMS"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "You must fill all fields"
+msgstr "Vous devez remplir tous les champs"
+
+msgid "keyword"
+msgstr "Mot-cle"
+
+msgid "will be replaced by SMS incoming date/time"
+msgstr "sera remplacé par la date/heure du SMS reçu"
+
+msgid "will be replaced by SMS raw message"
+msgstr "Sera remplacé par le message complet"
+
+msgid "will be replaced by command keyword"
+msgstr "sera remplacé par le mot-clé du service"
+
+msgid "will be replaced by command parameter passed to server from SMS"
+msgstr "sera remplacé par les paramètres additionnels du SMS passés au serveur"
+
+msgid "will be replaced by sender number"
+msgstr "sera remplacé par le numéro de l'émetteur"

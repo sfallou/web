@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Scripts javascript : Aperçu</title>
+</head><font face="Times New Roman"></font>
+<body onload="doWave(0)">
+
+<br /><p class="tt" >Texte ondulant</p><br /><br />
+
+<script language="JavaScript">
+/* script edited by David Gardner (toolmandav@geocities.com)*/
+//insérez votre texte ici
+var theText = "outils-web.com";
+function nextSize(i,incMethod,textLength)
+{
+if (incMethod == 1) return (72*Math.abs(Math.sin(i/(textLength/3.14))) );
+if (incMethod == 2) return (255*Math.abs(Math.cos(i/(textLength/3.14))));
+}
+function sizeCycle(text,method,dis)
+{
+	output = "";
+	for (i = 0; i < text.length; i++)
+	{
+		size = parseInt(nextSize(i +dis,method,text.length));
+		output += "<font face='verdana' style='font-size: "+ size +"pt'>" +text.substring(i,i+1)+ "</font>";
+	}
+	thediv.innerHTML = output;
+}
+
+function doWave(n) 
+{   
+	sizeCycle(theText,1,n);
+	if (n > theText.length) {n=0}
+//réglez la vitesse
+	setTimeout("doWave(" + (n+1) + ")", 100);
+}
+</script>
+<div ID="thediv" align="center"></div>
+
+</body>
+</html>

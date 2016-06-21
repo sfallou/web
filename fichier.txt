@@ -1,0 +1,1 @@
+cd /usr/local/bin/mbrola && $LIA_PHON_REP/script/lia_nett < rv_audio.txt | $LIA_PHON_REP/script/lia_taggreac | $LIA_PHON_REP/script/lia_phon | $LIA_PHON_REP/bin/lia_add_proso > rv_audio.pho\ > son.sh

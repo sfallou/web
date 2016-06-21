@@ -1,0 +1,20 @@
+msgid "Count"
+msgstr "Hitung"
+
+msgid "Date/Time"
+msgstr "Waktu/Jam"
+
+msgid "Group"
+msgstr "Grup"
+
+msgid "Message"
+msgstr "Pesan"
+
+msgid "Queue Code"
+msgstr "Kode antrian"
+
+msgid "User"
+msgstr "Pengguna"
+
+msgid "View SMS queue"
+msgstr "Lihat antrian SMS"

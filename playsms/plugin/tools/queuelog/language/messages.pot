@@ -1,0 +1,20 @@
+msgid "Count"
+msgstr ""
+
+msgid "Date/Time"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Queue Code"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "View SMS queue"
+msgstr ""

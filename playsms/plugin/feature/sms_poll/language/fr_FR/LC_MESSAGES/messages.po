@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"Language:fr-FR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Add"
+msgstr "Ajouter"
+
+msgid "Add SMS poll"
+msgstr "Ajouter un sondage"
+
+msgid "Add choice to this poll"
+msgstr "Ajouter une réponse à ce sondage"
+
+msgid ""
+"Are you sure you want to delete SMS poll with all its choices and votes ?"
+msgstr ""
+"Etes-vous certain de vouloir supprimer ce sondage avec tous ses resultats ?"
+
+msgid "Are you sure you want to delete choice ?"
+msgstr "Etes-vous certain de vouloir supprimer cette réponse ?"
+
+msgid "Choice already exists"
+msgstr "Cette réponse existe déjà"
+
+msgid "Choice has been added"
+msgstr "La réponse a été ajoutée"
+
+#, fuzzy
+msgid "Choice keyword"
+msgstr "Mot-clé réponse"
+
+msgid "Choice title"
+msgstr "Titre réponse"
+
+msgid "Edit SMS poll"
+msgstr "Édition du sondage"
+
+msgid "Edit SMS poll choices"
+msgstr "Édition des réponses du sondage"
+
+msgid "Fail to add SMS poll"
+msgstr "Impossible de supprimer les réponses de ce sondage"
+
+msgid "Fail to delete SMS poll choice"
+msgstr "Impossible de supprimer les réponses de ce sondage"
+
+msgid "Graph output"
+msgstr ""
+
+msgid "JSON output"
+msgstr ""
+
+msgid "Keyword"
+msgstr "Mot-clé"
+
+msgid "Manage poll"
+msgstr "Service sondage"
+
+msgid "PHP serialize output"
+msgstr ""
+
+msgid "Reply message on invalid answer"
+msgstr ""
+
+msgid "Reply message on valid answer"
+msgstr ""
+
+msgid "Reply message when invalid answer"
+msgstr ""
+
+msgid "SMS poll already exists, reserved or use by other feature"
+msgstr "Ce sondage existe déjà, est réservé ou utilisé par un autre service"
+
+msgid "SMS poll choice and all its voters has been deleted"
+msgstr "Les réponses et tous les votes de ce sondage ont été supprimés"
+
+#, fuzzy
+msgid "SMS poll graph"
+msgstr "Mot-clé du sondage"
+
+msgid "SMS poll has been added"
+msgstr "Le sondage a été ajouté"
+
+msgid "SMS poll keyword"
+msgstr "Mot-clé du sondage"
+
+msgid "SMS poll status has been changed"
+msgstr "Le statut de ce sondage a été modifié"
+
+msgid "SMS poll title"
+msgstr "Titre du sondage"
+
+msgid "SMS poll with all its messages has been deleted"
+msgstr "Ce sondage avec tous ses messages a été supprimé"
+
+msgid "SMS poll with has been saved"
+msgstr "Le sondage a été sauvegardé"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "This poll has 0 votes!"
+msgstr ""
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "User"
+msgstr "Compte"
+
+msgid "View"
+msgstr ""
+
+#, fuzzy
+msgid "View poll"
+msgstr "Service sondage"
+
+msgid "XML output"
+msgstr ""
+
+msgid "You must fill all fields"
+msgstr "Vous devez remplir tous les champs"
+
+#, fuzzy
+msgid "disabled"
+msgstr "Désactivé"
+
+#, fuzzy
+msgid "enabled"
+msgstr "Activé"
+
+msgid "keyword"
+msgstr "mot-clé"
+
+msgid "title"
+msgstr "titre"

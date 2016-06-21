@@ -1,0 +1,31 @@
+body{
+	background-color:transparent;
+	padding-top:70px;
+}
+.navigation .breadcrumb{
+	float: left;
+	margin: 7px 10px;
+}
+.header{
+	margin-top: 30px;
+
+}
+.collection{
+	width: 130px;
+	height: 150px;
+	margin: 0px;
+
+}
+
+.text{
+		width: 150;
+		height: 150;
+		margin: 0px;
+
+}
+.avatar{
+		background-size:cover;
+		margin-left:12px;
+
+
+}

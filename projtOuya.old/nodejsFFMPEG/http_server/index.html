@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>HTML/Javascript encodage Audio/Video directement sur le cloud - www.codeyourweb.org | GARNIER Jean-Pierre</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="jquery-ui-1.10.3/themes/base/jquery-ui.css" />
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script src="jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+		<script type="text/javascript" src="socket.io.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	
+	<body>
+	
+	<div id="opacity"></div>
+	<div id="encodeProgress">
+		<span id="progressInfo">Initialisation du moteur...</span>
+		<div id="progressbar">
+			<span id="progress-number">0%</span>
+		</div>
+	</div>
+		<!-- upload file -->
+		<div id="uploadBox">
+				<h1>1/ Uploader le fichier de votre choix</h1>
+				<label for="inputFile">Choisissez le fichier a envoyer:</label><br />
+				<input type="file" name="inputFile" id="inputFile" value="Parcourir." />
+				<div id="conversionOptions">
+					<h1>2/ Choisissez le type de conversion</h1>
+					<label for="inputFormat">Type de fichier entrant:</label>
+					<input type="text" id="inputFormat" name="inputFormat" readonly="readonly" /><br />
+					<label for="outputFormat">Type de fichier sortant:</label>
+					<select name="outputFormat" id="outputFormat">
+						<option value="">Choisissez un format</option>
+					</select>
+					<br /><br />
+					<input type="button" disabled="disabled" value="Envoyer et encoder" />
+				</div>
+			
+			<!-- encoded file info & link -->
+			<div id="linkBox">
+			<h1>3/ Résultat de l'encodage</h1>
+				<label for="encodeResult">Retour de la console d'encodage:</label><br />
+				<textarea rows="5" cols="70" id="encodeResult"></textarea><br /><br />
+				<a href="#" id="encodedLink" target="_blank" readonly="readonly">- Cliquez ici pour télécharger le fichier encodé</a>
+			</div>
+			
+			<div id="errorBox">
+			<h1>Erreur de conversion</h1>
+				<label for="errorResult">Retour de la console d'encodage:</label><br />
+				<textarea rows="5" cols="70" id="encodeResult" readonly="readonly"></textarea><br /><br />
+			</div>
+		</div>
+		
+		<!-- service description -->
+		<div id="infoBox">
+			<p>Cet exemple montre les possibilités d'encodage de fichier d'un format à l'autre directement sur le cloud.
+			Il s'agit ici uniquement d'un tutoriel pour montrer la fonctionnalité et non d'un systême en production. </p>
+			
+			<p>Ce projet se compose de plusieurs briques plus ou moins récentes permettant d'offrir une expérience utilisateur fluide et de qualité 
+		     tel l'upload dynamique de fichiers. Le décodage et l'encodage de fichier se fait directement sur le serveur grace au projet <a href="http://www.ffmpeg.org/" target="_blank">FFmpeg</a> combiné 
+			 a <a href="http://nodejs.org/" target="_blank">Node.js</a> (javascript coté serveur) et la librairie <a href="http://socket.io/" target="_blank">Socket.io.js</a> pour les transferts d'informations client/serveur en temps réel.</p>
+			 
+			<p>Si ce projet vous intéresse, vous pouvez trouver le tutoriel de développement au complet ainsi que le code source du projet au bas de cette page ou bien 
+			sur mon blog technique: <a href="http://www.codeyourweb.org" target="_blank">www.codeyourweb.org</a> </p>
+		</div>
+		
+		<!-- credits & full tutorial link -->
+		<div id="creditsBox">&copy 2013 Codeyourweb - www.codeyourweb.org - <a href="http://www.codeyourweb.org/conversion-audio-video-node-js">Voir le tutoriel de réalisation complet</a> | <a href="www.codeyourweb.org/test/nodeEncoder.zip">Télécharger le code source du projet</a></div>
+	</body>
+</html>

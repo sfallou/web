@@ -1,0 +1,286 @@
+[general]
+static=yes
+writeprotect=no
+
+[globals]
+; variables go here
+;DYNAMIC_FEATURES = automon ; pour l'enregistrement d'appel
+
+[default]
+; default context
+
+;[emc2]
+;exten => _1XXX,1,Dial(SIP/${EXTEN},10,tr)
+;exten => _1XXX,n,Hangup()
+
+[internal]  ;contexte pour la visioconférence
+exten => _XXXX,1,Dial(SIP/${EXTEN:0})
+
+
+;;IVR avec googletts
+exten => 2000,1,Goto(ivr-googletts,s,1) ;extension  de l'ivr
+[ivr-googletts]             ;contexte ivr_googletts
+exten => s,1,Answer()
+exten => s,2,Set(TIMEOUT(response)=5)
+exten => s,3,agi(googletts.agi,"Bienvenus chez EMC2 GROUP",fr,any)
+exten => s,4,agi(googletts.agi,"Pour prendre un rendez vous",fr,any)
+exten => s,5,agi(googletts.agi,"Appuyer sur 1 pour Fallou",fr,any)
+exten => s,6,agi(googletts.agi,"Appuyer sur 2 pour Directeur",fr,any)
+exten => s,7,agi(googletts.agi,"Appuyer sur 3 pour adjoint directeur",fr,any)
+exten => s,8,agi(googletts.agi,"Appuyer sur 4 pour secretaire",fr,any)
+exten => s,9,agi(googletts.agi,"Appuyer sur autre touche pour réécouter",fr,any)
+exten => s,10,WaitExten()
+
+exten => 1,1,Goto(emc2,5000,1)
+exten => 2,1,Goto(emc2,5001,1)
+exten => 3,1,Goto(emc2,5002,1)
+exten => 4,1,Goto(emc2,5003,1)
+exten => _[5-9#],1,Goto(ivr-googletts,s,3)
+exten => t,1,agi(googletts.agi,"Le temps d'attente a expiré. Merci",fr,any)
+exten => t,2,Hangup()
+
+
+[test]
+;exten => _X.,1,Dial(Mobile/sfallou/${EXTEN},25)
+;_X.,n,Hangup
+;exten => s,1,Dial(SIP/directeur)
+;exten => s,2,Dial(SIP/sfallou)
+
+
+
+[webrtc]
+include => emc2
+
+[emc2]
+include => parkedcalls ; permet le parking en faisant ##700 ou **700 
+include => internal
+include => webrtc
+include => test
+;numéro de la boite vocal
+exten => 6000,1,Log(NOTICE, Dialing out from ${CALLERID(all)} to VoiceMail(6000))
+exten => 6000,n,VoiceMailMain(${CALLERID(num)}@default)
+exten => 6000,n,Hangup()
+
+
+
+;enregistrement vocal en appelant les n° de 1000-1999
+exten => _1XXX,1,Record(IVR-${EXTEN:1}:ulaw)
+exten => _1XXX,2,Wait(2)
+exten => _1XXX,3,Playback(IVR-${EXTEN:1})
+
+;;redirection vers un poste libre
+exten => 5999,1,Dial(SIP/secretaire,20,tr)
+exten => 5999,n,Dial(SIP/directeur,20,tr)
+exten => 5999,n,Dial(SIP/sfallou,20,tr)
+exten => 5999,n,Dial(SIP/adjoint,20,tr)
+exten => 5999,n,Dial(SIP/bng,20,tr)
+exten => 5999,n,Dial(SIP/diary,20,tr)
+
+
+;enregistrement des appels à la demande de l'utilisateur
+exten => _X.,1,Set(TOUCH_MIXMONITOR=${STRFTIME(,GMT+4,%F_%T)})
+exten => _X.,n,Dial(SIP/${EXTEN},10,wW) ; w indique que l'enregistrement peut etre initie par l'appelé et W par l'appelant (*1 permet l'enregistrement)
+exten => _X.,n,Hangup()
+
+
+;;IVR classique et personnalisé
+
+exten => 3000,1,Playback(IVR-000)
+exten => 3000,2,Playback(IVR-001)
+exten => 3000,3,Read(var,,1,,,5)
+exten => 3000,4,GotoIf($[${var}=1]?emc2,5001,1:3000,5)
+exten => 3000,5,GotoIf($[${var}=2]?emc2,5000,1:3000,6)
+exten => 3000,6,GotoIf($[${var}=3]?emc2,5002,1:3000,7)
+exten => 3000,7,GotoIf($[${var}=4]?emc2,5003,1:3000,8)
+exten => 3000,8,Background(IVR-003)
+exten => 3000,9,Goto(2)
+
+;;visioconférence
+exten => 4000,1,Answer()
+exten => 4000,n,ConfBridge(4000,conf1,user1,menu1)
+
+;;Communication avec GSM (n° passerelle=778757730) par bluetooth 
+exten => _X.,1,Dial(Mobile/sfallou/${EXTEN},25)
+_X.,n,Hangup
+exten => s,1,Goto(emc2,2020,1)
+exten => s,n,Goto(emc2,2020,1)
+exten => s,n,Dial(SIP/sfallou)
+exten => s,n,Dial(SIP/directeur)
+
+;;Prise de Rendez-vous version 1
+exten => 2010,1,Playback(/son/bienvenu2)
+exten => 2010,2,Background(/son/choix2) 
+exten => 2010,3,Read(choix,,1,,,10)
+exten => 2010,4,GotoIf($[${choix}==1]?2010,6:2010,5)
+exten => 2010,5,GotoIf($[${choix}==2]?2010,6:2010,2)
+exten => 2010,6,Set(rv=${CURL(http://localhost/rv.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2010,7,Playback(/son/votre_rv)
+exten => 2010,9,Wait(0.25)
+exten => 2010,8,Playback(/son/le)
+exten => 2010,9,Wait(0.25)
+exten => 2010,10,Playback(/son/son_jour${CALLERID(num):4})
+exten => 2010,11,Wait(0.25)
+exten => 2010,12,Playback(/son/son_mois${CALLERID(num):4})
+exten => 2010,13,Wait(0.25)
+exten => 2010,14,Playback(/son/son_year${CALLERID(num):4})
+exten => 2010,15,Wait(0.25)
+exten => 2010,16,Playback(/son/a)
+exten => 2010,17,Wait(0.25)
+exten => 2010,18,Playback(/son/son_heure${CALLERID(num):4})
+exten => 2010,19,Wait(0.25)
+exten => 2010,20,Playback(/son/heure)
+exten => 2010,21,Wait(0.25)
+exten => 2010,22,Playback(/son/son_minute${CALLERID(num):4})
+exten => 2010,23,Wait(0.25)
+exten => 2010,24,Playback(/son/minute)
+exten => 2010,25,Wait(0.25)
+exten => 2010,26,Playback(/son/votre_code)
+exten => 2010,27,Playback(/son/code_0${CALLERID(num):4})
+exten => 2010,28,Wait(0.25)
+exten => 2010,29,Playback(/son/code_1${CALLERID(num):4})
+exten => 2010,30,Wait(0.25)
+exten => 2010,31,Playback(/son/code_2${CALLERID(num):4})
+exten => 2010,32,Wait(0.25)
+exten => 2010,33,Playback(/son/code_3${CALLERID(num):4})
+exten => 2010,34,Wait(0.25)
+exten => 2010,35,Playback(/son/code_4${CALLERID(num):4})
+exten => 2010,36,Wait(0.25)
+exten => 2010,37,Playback(/son/code_5${CALLERID(num):4})
+exten => 2010,38,Wait(0.25)
+exten => 2010,39,Playback(/son/code_6${CALLERID(num):4})
+exten => 2010,40,Wait(0.25)
+exten => 2010,41,Playback(/son/code_7${CALLERID(num):4})
+exten => 2010,42,Wait(0.25)
+exten => 2010,43,Background(/son/repeter)
+exten => 2010,44,Read(var,,1,,,10) 
+exten => 2010,45,GotoIf($[${var}==0]?2010,7:2010,46)
+exten => 2010,46,Set(mv=${CURL(http://localhost/rm.php?num=${CALLERID(num):4})})
+exten => 2010,47,Hangup()
+
+
+;Prise de Rendez-vous version 2
+exten => 2020,1,Playback(/son/bienvenu_serveur)
+exten => 2020,2,Background(/son/choix_rv) 
+exten => 2020,3,Read(choix,,1,,,10)
+exten => 2020,4,GotoIf($[${choix}==1]?2020,7:2020,5)
+exten => 2020,5,GotoIf($[${choix}==2]?2020,7:2020,6)
+exten => 2020,6,GotoIf($[${choix}==3]?2020,7:2020,2)
+exten => 2020,7,Set(jour=${CURL(http://localhost/rv_jour.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2020,8,Set(date=${CURL(http://localhost/rv_date.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2020,9,Set(mois=${CURL(http://localhost/rv_mois.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2020,10,Set(annee=${CURL(http://localhost/rv_annee.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2020,11,Set(heure=${CURL(http://localhost/rv_heure.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2020,12,Set(minute=${CURL(http://localhost/rv_minute.php?choix=${choix}&num=${CALLERID(num):4})})
+exten => 2020,13,GotoIf($[${jour}==0]?2020,23:2020,14)
+exten => 2020,14,Playback(/son/son_jour${jour})
+exten => 2020,15,Playback(/son/son_date${date})
+exten => 2020,16,Playback(/son/son_mois${mois})
+exten => 2020,17,Playback(/son/son_annee${annee})
+exten => 2020,18,Playback(/son/son_heure${heure})
+exten => 2020,19,Playback(/son/son_minute${minute})
+exten => 2020,20,Set(message=${CURL(http://localhost/sms.php?choix=${choix}&num=${CALLERID(num):4}&day=${jour}&date=${date}&month=${mois}&year=${annee}&hour=${heure}&min=${minute})})
+exten => 2020,21,Playback(/son/vm-goodbye)
+exten => 2020,22,Hangup()
+exten => 2020,23,Background(/son/rv_indisponible)
+exten => 2020,24,Playback(/son/vm-goodbye)
+exten => 2020,25,Hangup()
+
+
+
+;exten => 7777,1,Answer()
+;exten => 7777,n,Set(nb=${CALLERID(num):1})
+;exten => 7777,Hangup()
+
+;; test sons enregistrement
+;exten => 8888,1,Playback(/son/son_jourLundi)
+;exten => 8888,n,Playback(/son/son_jourMardi)
+;exten => 8888,n,Playback(/son/son_jourMercredi)
+;exten => 8888,n,Playback(/son/son_jourJeudi)
+;exten => 8888,n,Playback(/son/son_jourVendredi)
+;exten => 8888,n,Playback(/son/son_jourSamedi)
+;exten => 8888,n,Playback(/son/son_jourDimanche)
+;exten => 8888,n,Playback(/son/son_date1)
+;exten => 8888,n,Playback(/son/son_date2)
+;exten => 8888,n,Playback(/son/son_date3)
+;exten => 8888,n,Playback(/son/son_date4)
+;exten => 8888,n,Playback(/son/son_date5)
+;exten => 8888,n,Playback(/son/son_date6)
+;exten => 8888,n,Playback(/son/son_date7)
+;exten => 8888,n,Playback(/son/son_date8)
+;exten => 8888,n,Playback(/son/son_date9)
+;exten => 8888,n,Playback(/son/son_date10)
+;exten => 8888,n,Playback(/son/son_date11)
+;exten => 8888,n,Playback(/son/son_date12)
+;exten => 8888,n,Playback(/son/son_date13)
+;exten => 8888,n,Playback(/son/son_date14)
+;exten => 8888,n,Playback(/son/son_date15)
+;exten => 8888,n,Playback(/son/son_date16)
+;exten => 8888,n,Playback(/son/son_date17)
+;exten => 8888,n,Playback(/son/son_date18)
+;exten => 8888,n,Playback(/son/son_date19)
+;exten => 8888,n,Playback(/son/son_date20)
+;exten => 8888,n,Playback(/son/son_date21)
+;exten => 8888,n,Playback(/son/son_date22)
+;exten => 8888,n,Playback(/son/son_date23)
+;exten => 8888,n,Playback(/son/son_date24)
+;exten => 8888,n,Playback(/son/son_date25)
+;exten => 8888,n,Playback(/son/son_date26)
+;exten => 8888,n,Playback(/son/son_date27)
+;exten => 8888,n,Playback(/son/son_date28)
+;exten => 8888,n,Playback(/son/son_date29)
+;exten => 8888,n,Hangup()
+
+;;Communication avec GSM (n° passerelle=779164904) par bluetooth 
+;exten => _X.,1,Dial(Mobile/emc2_portable/${EXTEN},25)
+;_X.,n,Hangup
+;exten => s,1,Goto(emc2,2010,1)
+;exten => s,n,Dial(SIP/sfallou)
+;exten => s,n,Dial(SIP/directeur)
+
+
+;;consultation de compte
+;exten => 2014,1,Playback(/son/bienvenu)
+;exten => 2014,2,Background(/son/choix)exten => 2014,3,Read(code,,4,,,10)
+;exten => 2014,4,GotoIf($[${code}!=0]?2014,5:2014,2)
+;exten => 2014,5,Set(montant=${CURL(http://localhost/montant.php,code=${code}&num=${CALLERID(num)})})
+;exten => 2014,6,Playback(/son/son${CALLERID(num)})
+;exten => 2014,7,Hangup()
+;;Les utilisateurs
+exten => 5000,1,Dial(SIP/sfallou,10,Ttr)
+exten => 5000,n,VoiceMail(5000)
+exten => 5000,n,Hangup()
+
+
+exten => 5004,1,Dial(SIP/bng,10,Ttr)
+exten => 5004,n,VoiceMail(5004)
+exten => 5004,n,Hangup()
+
+
+exten => 5001,1,Dial(SIP/directeur,10,Ttr)
+exten => 5001,n,VoiceMail(5001)
+exten => 5001,n,Hangup()
+
+
+exten => 5002,1,Dial(SIP/adjoint,10,Ttr)
+exten => 5002,n,VoiceMail(5002)
+exten => 5002,n,Hangup()
+
+
+exten => 5003,1,Dial(SIP/secretaire,10,Ttr)
+exten => 5003,n,VoiceMail(5003)
+exten => 5003,n,Hangup()
+
+
+exten => 5005,1,Dial(SIP/diary,10,Ttr)
+exten => 5005,n,VoiceMail(5005)
+exten => 5005,n,Hangup()
+
+
+exten => 5020,1,Dial(SIP/mef,10,Ttr)
+exten => 5020,n,VoiceMail(5020)
+exten => 5020,n,Hangup()
+
+
+exten => 5019,1,Dial(SIP/ablay,10,Ttr)
+exten => 5019,n,VoiceMail(5019)
+exten => 5019,n,Hangup()

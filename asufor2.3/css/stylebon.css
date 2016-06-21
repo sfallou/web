@@ -1,0 +1,32 @@
+body{
+	width:400px;
+	margin:100px;
+	background-color:#e7e7ee;
+}
+
+h2 {
+font-family: 'Ubuntu', 'Lato', sans-serif;
+
+    color:black ;
+    font-weight: 700;
+    font-size: 40px;
+    text-align:center;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+
+}
+table {
+	width:100%;
+	font-family: 'Times New Romain', 'Arial';	
+}
+p {
+	font-size:15px;
+	width:400px;
+	margin-left:100px;
+}
+
+.cadre{
+	width:700px;
+	background-color:white;
+	border: 1px solid #000;
+	border-radius:20px;
+}
