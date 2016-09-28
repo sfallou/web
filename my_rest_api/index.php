@@ -22,9 +22,9 @@ $di = new FactoryDefault();
 $di->set('db', function () {
     return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
         "host" => "localhost",
-        "username" => "root",
-        "password" => "passer",
-        "dbname"   => "challenge2016",
+        "username" => "",
+        "password" => "",
+        "dbname"   => "",
         "options" => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
         )
